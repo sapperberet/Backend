@@ -1,6 +1,5 @@
 from django.contrib import admin
+from .models import Item,Location
 
-from .models import Items,Location
-
-admin.site.register(Items)
+admin.site.register(Item)
 admin.site.register(Location)
