@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from models import Item,Location
+from .models import Item,Location
 
 class LocationSerializer(serializers.ModelSerializer):
     class Meta:
