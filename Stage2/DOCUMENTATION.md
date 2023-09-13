@@ -47,6 +47,6 @@ Notes:
     Validation:
         Testing the different ways of providing input was done to check the validity of the id given
 UML Link:
-    
+    https://github.com/sapperberet/Backend/edit/main/Stage2/UML.png
 E-R Link:
-    
+    https://github.com/sapperberet/Backend/edit/main/Stage2/E-R.drawio.png
