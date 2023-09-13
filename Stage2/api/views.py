@@ -1,32 +1,30 @@
 # from django.shortcuts import render
+from .models import person
 from rest_framework import generics
-from .models import Item,Location
-from .serializers import ItemSerializer,LocationSerializer
+from .serializers import pSerializer
 
 
-class ItemList(generics.ListCreateAPIView):
-    serializer_class = ItemSerializer
+class list_person(generics.ListAPIView):
+    queryset = person.objects.all()
+    serializer_class = pSerializer
+class C_person(generics.CreateAPIView):
+    queryset = person.objects.all()
+    serializer_class = pSerializer
 
 
-    def get_queryset(self):
-        queryset = Item.objects.all()
-        location = self.request.query_params.get('location')
-        if location is not None:
-            queryset = queryset.filter(itemLocation=Location)
-        return queryset
-    
-
-class ItemDetail(generics.RetrieveUpdateDestroyAPIView):
-    serializer_class = ItemSerializer
-    queryset = Item.objects.all()
-class LocationList(generics.ListCreateAPIView):
-    serializer_class = ItemSerializer
-    queryset = Location.objects.all()
+class R_person(generics.RetrieveAPIView):
+    queryset = person.objects.all()
+    serializer_class = pSerializer
+    lookup_field = 'id'
 
 
+class U_person(generics.UpdateAPIView):
+    queryset = person.objects.all()
+    serializer_class = pSerializer
+    lookup_field = 'id'
 
 
-class LocationDetail(generics.RetrieveUpdateDestroyAPIView):
-    serializer_class = ItemSerializer
-    queryset = Location.objects.all()
-
+class D_person(generics.DestroyAPIView):
+    queryset = person.objects.all()
+    serializer_class = pSerializer
+    lookup_field = 'id'

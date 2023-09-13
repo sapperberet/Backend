@@ -1,10 +1,11 @@
 from django.urls import path
-from .views import ItemList , LocationList, ItemDetail , LocationDetail
+from .views import list_person,C_person,R_person,U_person,D_person
 urlpatterns =[
-    path('item/', ItemList.as_view()),
-    path('item/<int:pk>/', ItemDetail.as_view()),
-    path('location/', LocationList.as_view()),
-    path('location/<int:pk>/', LocationDetail.as_view()),
 
+    path('', list_person.as_view()),
+    path('create/', C_person.as_view()),
+    path('<int:id>/', R_person.as_view()),
+    path('update/<int:id>/', U_person.as_view()),
+    path('delete/<int:id>/', D_person.as_view())
 
 ]

@@ -1,14 +1,8 @@
 from rest_framework import serializers
 
-from .models import Item,Location
+from .models import person
 
-class LocationSerializer(serializers.ModelSerializer):
+class pSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Location
+        model = person
         fields =('__all__')
-    
-class ItemSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Item
-        fields =('__all__')
-    
